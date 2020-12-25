@@ -2,17 +2,112 @@
 <head>
     <meta charset="UTF-8">
     <title>新規登録</title>
-</head>
-<body>
-    <h1>新規登録</h1>
+    <style> 
+        .header{
+            background-color:#45cbdd;
+            color: #fff;
+            height: 100px;
+        }
+        .header-logo{
+            float: left;
+            font-size:40px;
+            padding:25px 40px;
+        }
 
+        .main{
+            padding:20px 80px;
+        }
+
+        .container h1{
+            text-align: center;
+            font-size:60px;
+        }
+
+        .container h2{
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .container h3{
+            text-align: center;
+            font-size: 20px;
+            color :#e70e3d;
+            border-bottom:2px solid #dee7ec;
+        }
+
+        .form{
+            margin: 0 30%;
+            font-size: 20px;
+        }
+
+        input{
+            float: center;
+            width:400px;
+            margin-top:10px;
+            margin-bottom:30px;
+            padding:20px;
+            font-size:18px;
+            border:1px solid #dee7ec;
+        
+        }
+
+        textarea {
+            width: 400px;
+            height: 10em;
+            margin-top:10px;
+            margin-bottom:30px;
+            padding:20px;
+            font-size:18px;
+            border:1px solid #dee7ec;
+        }
+
+        select { width: 250px; }
+
+        .footer {
+            background-color: #2f5167;
+            color: #fff;
+            height: 80px;
+            padding: 40px;
+        }
+
+
+        .footer-logo {
+            float: left;
+            font-size: 40px;
+            padding:20px;
+        
+        }
+    </style>
+</head>
+
+<body>
+<div class="header">
+        <div class="header-logo">Evridge</div>
+    </div>
+    <div class="main">
+    <div class="container">
+        <h1>新規ユーザー登録</h1>
+        <h2>イベントを登録する前にユーザー情報を登録してください</h2>
+        <h3>※全て必須項目ですので必ず入力してください</h3>
+       </div>
+<div class="form">
     <form action="/user_register" method="post">
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <p>ユーザー名</p>
         <input type="text" name="user_id" placeholder="user name">
+        <p>パスワード</p>
         <input type="password" name="password" placeholder="password">
+        <p>住所</p>
         <input type="text" name="address" placeholder="address">
+        <p>電話番号</p>
         <input type="text" name="tel" placeholder="tel">
+        <p>上記を記入したら下の登録ボタンを押してください</p>
         <input type="submit" value="登録">
     </form>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="footer-logo">Knocks</div>
+    </div>
 </body>
 </html>
